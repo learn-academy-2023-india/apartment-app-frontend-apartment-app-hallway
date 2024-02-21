@@ -1,8 +1,26 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react"
+import { BrowserRouter } from "react-router-dom"
+import { render, screen } from "@testing-library/react"
+import Footer from "./components/Footer"
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe("<Footer />", () => {
+  it("contains the correct copyright text and current year", () => {
+    render(
+      <BrowserRouter>
+        <Footer />
+      </BrowserRouter>
+    )
+    const currentYear = new Date().getFullYear()
+    const footerYearText = screen.getByText(new RegExp(currentYear.toString()))
+    expect(footerYearText).toBeInTheDocument()
+  })
+
+  it("includes a heart emoji for love", () => {
+    render(
+      <BrowserRouter>
+        <Footer />
+      </BrowserRouter>
+    )
+    expect(screen.getByRole("img", { name: "heart" })).toBeInTheDocument()
+  })
+})
