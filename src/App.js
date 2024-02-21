@@ -1,16 +1,16 @@
 import "./App.css"
 import { Routes, Route } from "react-router-dom"
 import { useState } from "react"
-import ApartmentEdit from "./pages/ApartmentEdit"
-import ApartmentIndex from "./pages/ApartmentIndex"
-import ApartmentNew from "./pages/ApartmentNew"
-import ApartmentProtectedIndex from "./pages/ApartmentProtectedIndex"
-import ApartmentShow from "./pages/ApartmentShow"
+import AptEdit from "./pages/AptEdit"
+import AptIndex from "./pages/AptIndex"
+import AptNew from "./pages/AptNew"
+import AptProtectedIndex from "./pages/AptProtectedIndex"
+import AptShow from "./pages/AptShow"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Home from "./pages/Home"
-import mockApartments from "./mockApartments"
-import mockUsers from "./mockUsers"
+import mockApartments from "./mockData/mockApartments"
+import mockUsers from "./mockData/mockUsers"
 import NotFound from "./pages/NotFound"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
@@ -27,14 +27,14 @@ const App = () => {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route
-          path="/apartmentindex"
-          element={<ApartmentIndex apartments={apartments} />}
+          path="/aptindex"
+          element={<AptIndex apartments={apartments} />}
         />
         {currentUser && (
           <Route
             path="/myapartments"
             element={
-              <ApartmentProtectedIndex
+              <AptProtectedIndex
                 apartments={apartments}
                 currentUser={currentUser}
               />
@@ -42,17 +42,17 @@ const App = () => {
           />
         )}
         <Route
-          path="/apartmentshow/:id"
-          element={<ApartmentShow apartments={apartments} />}
+          path="/aptshow/:id"
+          element={<AptShow apartments={apartments} />}
         />
         <Route
-          path="/apartmentnew"
-          element={<ApartmentNew currentUser={currentUser} />}
+          path="/aptnew"
+          element={<AptNew currentUser={currentUser} />}
         />
         <Route
-          path="/apartmentedit/:id"
+          path="/aptedit/:id"
           element={
-            <ApartmentEdit currentUser={currentUser} apartments={apartments} />
+            <AptEdit currentUser={currentUser} apartments={apartments} />
           }
         />
         <Route path="*" element={<NotFound />} />

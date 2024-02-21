@@ -1,16 +1,28 @@
 import React from "react"
 import { BrowserRouter } from "react-router-dom"
-import { render } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import Footer from "../components/Footer"
 
 describe("<Footer />", () => {
-  it("renders without crashing", () => {
-    const div = document.createElement("div")
+  it("contains the correct copyright text and current year", () => {
     render(
       <BrowserRouter>
         <Footer />
-      </BrowserRouter>,
-      div
+      </BrowserRouter>
     )
+    const currentYear = new Date().getFullYear()
+    // Use a regex to allow for flexible matching
+    const footerYearText = screen.getByText(new RegExp(currentYear.toString()))
+    expect(footerYearText).toBeInTheDocument()
+  })
+
+  it("includes a heart emoji for love", () => {
+    render(
+      <BrowserRouter>
+        <Footer />
+      </BrowserRouter>
+    )
+
+    expect(screen.getByRole("img", { name: "heart" })).toBeInTheDocument()
   })
 })
