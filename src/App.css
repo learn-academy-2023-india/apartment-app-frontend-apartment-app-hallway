@@ -97,3 +97,28 @@ input:focus {
 	background-color: #f4f5f7;
 	padding: 20px;
 }
+/* AptShow Style */
+.apartment-card {
+	border-radius: 10px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	margin: 20px auto;
+	max-width: 800px;
+	overflow: hidden;
+}
+.apartmentshow-text {
+	background-color: #fff;
+	padding: 20px;
+}
+.apartmentshow-button, .back-button {
+	background-color: #800020;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	margin: 10px 5px 0 0;
+	padding: 10px 15px;
+}
+.apartmentshow-button:hover, .back-button:hover {
+	opacity: 0.8;
+}
