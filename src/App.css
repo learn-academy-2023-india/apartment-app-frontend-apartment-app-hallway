@@ -1,46 +1,94 @@
 body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: white; 
+	background-color: #f4f5f7;
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
 }
-
+a {
+	text-decoration: none;
+}
+button:focus {
+	outline: none;
+}
+input:focus {
+	outline: none;
+}
 /* Header Style */
 .header {
-  background-color: #800020; 
-  color: gold; 
-  padding: 20px;
   text-align: center;
+  padding: 20px 0;
+  color: white;
+	background-color: #800020;
+	position: relative;
 }
-
+.header::after {
+  background-color: gold;
+	bottom: 0;
+	content: '';
+	height: 5px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+/* Home Style */
+.home-container {
+	align-items: center;
+	background-size: cover;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+}
+.welcome-message {
+  padding: 20px;
+  color: white;
+	background-color: rgba(128, 0, 32, 0.9);
+	border-radius: 10px;
+	max-width: 600px;
+	text-align: center;
+}
+.explore-button, .home-button {
+  padding: 10px 20px;
+  border: 2px solid #800020;
+  color: #800020;
+	background-color: white;
+	border-radius: 5px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+.explore-button:hover, .home-button:hover {
+  color: white;
+	background-color: #800020;
+}
+/* NotFound Style */
+.not-found-container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+}
+.not-found-container h1, h3 {
+	color: #800020;
+}
+.not-found-link {
+	background-color: #800020;
+	border-radius: 5px;
+	color: white;
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+.not-found-link:hover {
+	opacity: 0.9;
+}
 /* Footer Style */
 .footer {
-  background-color: #800020; 
-  color: gold; 
-  text-align: center;
-  padding: 20px;
-  width: 100%;
-  position: fixed; 
-  left: 0;
-  bottom: 0;
-}
-.nav {
-  background-color: #800020; 
-}
-
-.nav-link {
-  color: gold !important; 
-  margin: 0 10px; 
-}
-
-.btn-link {
-  background: none;
-  border: none;
-  padding: 0;
-  color: gold !important; 
-  cursor: pointer;
-}
-
-.nav-link:hover, .btn-link:hover {
-  color: white !important; 
+	background-color: #800020;
+	bottom: 0;
+	left: 0;
+	padding: 20px;
+	position: fixed;
+	text-align: center;
+	width: 100%;
 }
