@@ -92,3 +92,8 @@ input:focus {
 	text-align: center;
 	width: 100%;
 }
+/* AptIndex and AptProtectedIndex Style */
+.apartments-body {
+	background-color: #f4f5f7;
+	padding: 20px;
+}
