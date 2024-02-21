@@ -122,3 +122,39 @@ input:focus {
 .apartmentshow-button:hover, .back-button:hover {
 	opacity: 0.8;
 }
+/* AptEdit and AptNew Style */
+.new-body {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	margin: 20px auto;
+	max-width: 600px;
+	padding: 40px;
+}
+.form-group {
+	margin-bottom: 20px;
+}
+.form-group label {
+	color: #333;
+	display: block;
+	margin-bottom: .5rem;
+}
+.form-group input, .form-group select {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	width: 100%;
+}
+.new-button {
+  width: 100%;
+	background-color: #800020;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+	display: block;
+	padding: 10px 20px;
+}
+.new-button:hover {
+	opacity: 0.9;
+}

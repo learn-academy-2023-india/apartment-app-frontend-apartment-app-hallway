@@ -3,7 +3,7 @@ import { useParams, NavLink } from "react-router-dom"
 import { Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button } from "reactstrap"
 
-const AptShow = ({apartments, current_user, deleteApartment}) => {
+const AptShow = ({apartments, currentUser, deleteApartment}) => {
 
   let {id} = useParams()
   const currentApartment = apartments?.find((apartment) => apartment.id === +id)
@@ -28,7 +28,7 @@ const AptShow = ({apartments, current_user, deleteApartment}) => {
                 <CardSubtitle>Manager: {currentApartment?.manager}</CardSubtitle>
                 <CardSubtitle>Email: {currentApartment?.email}</CardSubtitle>
               </div>
-              {current_user?.id === currentApartment?.user_id &&
+              {currentUser?.id === currentApartment?.user_id &&
                   <div className="show-button">            
                   <NavLink to={`/aptedit/${currentApartment?.id}`} className="nav-link edit-listing">
                     <Button className="apartmentshow-button">
