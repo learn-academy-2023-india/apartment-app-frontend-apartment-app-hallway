@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, NavLink } from "react-router-dom"
 
 const SignUp = ({ signup }) => {
   const formRef = useRef()
@@ -38,6 +38,7 @@ const SignUp = ({ signup }) => {
         <br />
         Confirm Password:{" "}
         <input
+          className="field auth-flex"
           type="password"
           name="password_confirmation"
           placeholder="confirm password"
@@ -45,11 +46,10 @@ const SignUp = ({ signup }) => {
         <br />
         <input className="actions" type="submit" value="Submit" />
         <div className="links">
-          Already registered?
-          <a href="/login">
-            {" "}
-            <u>Login</u>
-          </a>
+          Already registered?{" "}
+          <NavLink to="/signin">
+            <u>Sign In</u> 
+          </NavLink> here.
         </div>
       </form>
     </div>

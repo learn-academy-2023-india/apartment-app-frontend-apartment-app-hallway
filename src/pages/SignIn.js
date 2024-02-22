@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, NavLink } from "react-router-dom"
 
 const SignIn = ({ signIn }) => {
   const formRef = useRef()
@@ -10,32 +10,49 @@ const SignIn = ({ signIn }) => {
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
     const userInfo = {
-      "user": { email: data.email, password: data.password }
+      user: { email: data.email, password: data.password },
     }
     try {
-      await signIn(userInfo) 
+      await signIn(userInfo)
       navigate("/")
     } catch (error) {
-      console.error(error) 
+      console.error(error)
     }
     e.target.reset()
   }
 
-  return(
+  return (
     <div className="auth-body">
-      <h2 className="signin-header">Sign In</h2>
+      <h2 className="header">Sign In</h2>
       <form className="form-div" ref={formRef} onSubmit={handleSubmit}>
         <label>
-          Email: <input className="field auth-flex" type="email" name="email" placeholder="email" required />
+          Email:{" "}
+          <input
+            className="field auth-flex"
+            type="email"
+            name="email"
+            placeholder="email"
+            required
+          />
         </label>
-        <br/>
+        <br />
         <label>
-          Password: <input className="field auth-flex" type="password" name="password" placeholder="password" required />
+          Password:{" "}
+          <input
+            className="field auth-flex"
+            type="password"
+            name="password"
+            placeholder="password"
+            required
+          />
         </label>
-        <br/>
+        <br />
         <input className="actions" type="submit" value="Sign In" />
-        <div className="links">Not registered yet?  
-          <Link to="/signup"> <u>Signup</u></Link>
+        <div className="links">
+          Not registered yet?{" "}
+          <NavLink to="/signup">
+            <u>Sign Up</u>
+          </NavLink>
         </div>
       </form>
     </div>
