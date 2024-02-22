@@ -11,7 +11,7 @@ describe("<SignUp />", () => {
     mockSignup.mockClear()
   })
 
-  it("calls signup with correct data on form submission", async () => {
+  it("calls signup with correct data on form submission", () => {
     render(
       <BrowserRouter>
         <SignUp signup={mockSignup} />
